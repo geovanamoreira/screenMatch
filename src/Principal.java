@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -26,6 +28,9 @@ public class Principal {
         System.out.println("Total de Avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
 
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
         minhaSerie.setNome("Hannibal");
         minhaSerie.setAnoDeLancamento(2013);
         minhaSerie.setTemporadas(3);
@@ -38,5 +43,12 @@ public class Principal {
         calculadora.inclui(meuFilme2);
         calculadora.inclui(minhaSerie);
         System.out.println(calculadora.getTempoTotal());
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(minhaSerie);
+        episodio.setTotalVisualizacoes(10000);
+        filtro.filtra(episodio);
+
     }
 }
