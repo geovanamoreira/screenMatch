@@ -8,6 +8,11 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     //retorna somente o valor protegido pelo private, nao deixando que ngm de fora o altere
     public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
@@ -15,6 +20,10 @@ public class Titulo {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public int getAnoDeLancamento() {
