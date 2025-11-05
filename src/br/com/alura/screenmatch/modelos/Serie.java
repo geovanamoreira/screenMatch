@@ -51,4 +51,9 @@ public class Serie extends Titulo {
     @Override
     public void avalia(double nota) {
     }
+
+    @Override
+    public String toString() {
+        return "Série: " + getNome() + "(" + getAnoDeLancamento() + ")";
+    }
 }
